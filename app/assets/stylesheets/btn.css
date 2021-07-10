@@ -1,0 +1,11 @@
+/* .btn-secondary {
+  @apply .rounded .text-primary-1 .p-3 .leading-normal
+}
+
+.btn-primary {
+  @apply .rounded .text-white .p-3 .bg-primary-1 .leading-normal .ease-in-out
+}
+
+.btn-primary.disabled, button[disabled], button:disabled, button:disabled:hover {
+  @apply .bg-primary-disabled .cursor-not-allowed
+} */

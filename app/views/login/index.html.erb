@@ -1,0 +1,64 @@
+<div class="h-16 w-full flex flex-row items-center bg-white border-solid border-shade-3">
+  <img alt='logo' class='w-12 flex mt-2 ml-4' src='images/logo-only.png'>
+  <span class='flex ml-2 text-3xl'>Gemino</span>
+
+  <div class='flex ml-auto mr-4'>
+    <button class='btn-secondary text-primary-2 no-underline w-20 text-center'>
+      About
+    </button>
+
+    <%= link_to 'Login', login_index_path, class: 'btn-secondary text-primary-2 no-underline w-20 text-center mr-6' %>
+
+    <%= link_to 'Create an account', register_index_path, class: 'btn-secondary border border-solid border-primary-1 no-underline' %>
+  </div>
+</div>
+
+<div class='flex items-center relative justify-center bg-red mt-4' style='height: calc(100vh - 64px)'>
+  <div style='width: 578px' class='relative'>
+    <div id='login_form' style="width: 464px; max-width: 100%" class='bg-white px-8 pt-8 pb-4 mt-8 rounded-sm mx-auto sm:w-full'>
+
+      <h2 class='text-xl font-semibold text-center text-primary-2'>
+        Log in
+      </h2>
+      
+      <div class='flex justify-center mt-6'>
+        <button class="flex hover:btn-google-hover hover:text-primary-3 transition text-primary-2 relative justify-center items-center leading-normal rounded border p-3 w-3/5">
+          <img class='w-5' src='images/google-g.png'/>
+          <span class='ml-3'>Log in with Google</span>
+        </button>
+      </div>
+
+      <div class='flex mt-6'>
+        <hr class='border-t flex-grow border-shade-3'>
+        <p style="line-height: 0px;" class='ml-6 mr-6 text-sm text-primary-2'>or</p>
+        <hr class='border-t flex-grow border-shade-3'>
+      </div>
+
+      <div class='mt-6'>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%= f.label :email, class: "text-sm block text-primary-2 mt-4" do %>
+            Email Address
+          <% end %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "border rounded-sm h-12 mt-1 text-primary-2 focus:border-primary-1 p-4 w-full" %>
+
+          <%= f.label :password, class: "text-sm block text-primary-2 mt-4" do %>
+            Password
+          <% end %>
+          <%= f.password_field :password, autocomplete: "current-password", class: "border rounded-sm h-12 mt-1 text-primary-2 focus:border-primary-1 p-4 w-full" %>
+
+          <div class='flex justify-center'>
+            <%= f.submit "Log me in", class: "rounded bg-primary-1 p-3 text-white hover:btn-primary-hover transition leading-normal w-3/5 mt-8 z-10" %>
+          </div>
+
+          <div class='flex justify-center'>
+            <button class='btn-secondary transition hover:btn-secondary-hover w-3/5 z-10 text-center no-underline appearance-none'>
+              Forgot your password?
+            </button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class='block sm:block hidden' style='height: 153px'></div>
+    <img class='absolute sm:block bottom-0 hidden' src='/illustrations/img-reg-people.png' />
+  </div>
+</div>

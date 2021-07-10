@@ -1,0 +1,36 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+.btn {
+  @apply px-4 py-2 bg-blue-600 text-white rounded; 
+}
+
+.btn-secondary {
+  @apply rounded text-primary-1 p-3 leading-normal;
+}
+
+.btn-primary {
+  @apply rounded text-white p-3 bg-primary-1 leading-normal ease-in-out;
+}
+
+.btn-primary.disabled, button[disabled], button:disabled, button:disabled:hover {
+  @apply bg-primary-disabled cursor-not-allowed;
+}
+
+.welcome-card {
+  height: 523px;
+  width: 288px;
+  img {
+    height: 214px;
+  }
+  @media (max-width: 1440px) {
+    height: 410px;
+    img {
+      height: 170px;
+    }
+  }
+}
+
+
+@import "tailwindcss/utilities";
