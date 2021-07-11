@@ -1,0 +1,36 @@
+.btn-secondary {
+  @apply rounded text-primary-1 p-3 leading-normal;
+}
+
+.btn-primary {
+  @apply rounded text-white p-3 bg-primary-1 leading-normal ease-in-out;
+}
+
+.btn-primary.disabled, button[disabled], button:disabled, button:disabled:hover {
+  @apply bg-primary-disabled cursor-not-allowed;
+}
+
+@variants hover {
+  .btn-primary-hover {
+    @apply bg-primary-1-hover;
+  }
+  .btn-secondary-hover {
+    @apply text-primary-3
+  }
+  .btn-google-hover {
+    box-shadow: rgba(159, 163, 185, 0.6) 0px 10px 16px -8px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+  }
+}
+
+@variants group-hover {
+  .btn-primary-hover {
+    @apply bg-primary-1-hover;
+  }
+  .btn-secondary-hover {
+    @apply text-primary-3
+  }
+  .btn-primary-hover.disabled {
+    background-color: #b2b6cd;
+    cursor: not-allowed;
+  }
+}

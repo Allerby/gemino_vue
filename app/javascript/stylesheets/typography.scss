@@ -4,7 +4,7 @@ h1, h2, h3, h4, .body {
   font-stretch: normal;
   line-height: 1.2;
   letter-spacing: normal;
-  // color: $primary-2;
+  @apply text-primary-2;
 }
 
 h1 { 
@@ -28,15 +28,22 @@ h4 {
 }
 
 .body {
-  &__1 {
+  &-1 {
     font-size: 16px;
-    font-weight: 300;
+    font-weight: normal;
     line-height: 21px;
   }
-  &__2 {
+  &-2 {
     font-size: 14px;
     font-weight: normal;
     line-height: 18px;
   }
 }
 
+.body-1 {
+  @apply leading-normal;
+}
+
+.body-2 {
+  @apply text-sm;
+}
