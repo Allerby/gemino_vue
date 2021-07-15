@@ -22,10 +22,10 @@
       </h2>
       
       <div class='flex justify-center mt-6'>
-        <button class="flex hover:btn-google-hover hover:text-primary-3 transition text-primary-2 relative justify-center items-center leading-normal rounded border p-3 w-3/5">
+        <%= link_to user_google_oauth2_omniauth_authorize_path, class: "flex hover:btn-google-hover hover:text-primary-3 transition text-primary-2 relative justify-center items-center leading-normal rounded border p-3 w-3/5", method: :post do %>
           <img class='w-5' src='images/google-g.png'/>
           <span class='ml-3'>Log in with Google</span>
-        </button>
+        <% end %>
       </div>
 
       <div class='flex mt-6'>

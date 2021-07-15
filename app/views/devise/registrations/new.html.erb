@@ -8,7 +8,6 @@
     </button>
 
     <%= link_to 'Login', login_index_path, class: 'btn-secondary text-primary-2 no-underline w-20 text-center mr-6' %>
-
     <%= link_to 'Create an account', register_index_path, class: 'btn-secondary border border-solid border-primary-1 no-underline' %>
   </div>
 </div>
@@ -41,14 +40,14 @@
               <label class="text-sm block text-primary-2 mt-4">
                 First name
               </label>
-              <input class="border border-shade-3 rounded-sm h-12 mt-1 text-primary-2 focus:border-primary-1 p-4 w-full" />
+              <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "border border-shade-3 rounded-sm h-12 mt-1 text-primary-2 focus:border-primary-1 p-4 w-full" %>
             </div>
             
             <div class="flex-col ml-4">
               <label class="text-sm block text-primary-2 mt-4">
                 Last name
               </label>
-              <input class="border border-shade-3 rounded-sm h-12 mt-1 text-primary-2 focus:border-primary-1 p-4 w-full" />
+              <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "border border-shade-3 rounded-sm h-12 mt-1 text-primary-2 focus:border-primary-1 p-4 w-full" %>
             </div>
           </div>
 
