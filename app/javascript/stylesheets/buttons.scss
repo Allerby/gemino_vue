@@ -1,9 +1,9 @@
 .btn-secondary {
-  @apply rounded text-primary-1 p-3 leading-normal;
+  @apply rounded text-primary-1 p-3 leading-normal cursor-pointer;
 }
 
 .btn-primary {
-  @apply rounded text-white p-3 bg-primary-1 leading-normal ease-in-out;
+  @apply rounded text-white p-3 bg-primary-1 leading-normal ease-in-out cursor-pointer;
 }
 
 .btn-primary.disabled, button[disabled], button:disabled, button:disabled:hover {

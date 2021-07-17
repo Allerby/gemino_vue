@@ -1,0 +1,13 @@
+.error {
+  @apply font-normal text-xs text-error block text-center;
+}
+
+.field_with_errors {
+  @apply relative;
+  &:after {
+    background-image: url('/icons/ic-error.png');
+    background-repeat: no-repeat;
+    content: '';
+    @apply w-6 h-6 absolute right-2 top-4 block font-medium;
+  }
+}

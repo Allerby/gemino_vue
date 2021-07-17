@@ -14,8 +14,9 @@
     <%= favicon_link_tag asset_path('favicon.ico') %>
   </head>
 
-  <%# <p class="notice"><%= notice </p> %>
-  <%# <p class="alert"><%= alert </p> %>
+  <% if notice.present? %>
+    <p class="notice"><%= notice %></p>
+  <%end %>
 
   <body class="bg-shade-1 antialiased">
     <%= yield %>

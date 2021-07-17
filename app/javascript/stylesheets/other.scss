@@ -48,3 +48,7 @@
     cursor: pointer;
   }
 }
+
+.notice {
+  @apply bg-primary-1 text-white absolute top-4 left-4 p-4 rounded-md z-10;
+}

@@ -20,7 +20,7 @@
       <h2 class='text-xl font-semibold text-center text-primary-2'>
         Log in
       </h2>
-      
+
       <div class='flex justify-center mt-6'>
         <%= link_to user_google_oauth2_omniauth_authorize_path, class: "flex hover:btn-google-hover hover:text-primary-3 transition text-primary-2 relative justify-center items-center leading-normal rounded border p-3 w-3/5", method: :post do %>
           <img class='w-5' src='images/google-g.png'/>
@@ -33,6 +33,10 @@
         <p style="line-height: 0px;" class='ml-6 mr-6 text-sm text-primary-2'>or</p>
         <hr class='border-t flex-grow border-shade-3'>
       </div>
+
+      <% if alert %>
+        <p class="error mt-6"><%= alert %></p>
+      <% end %>
 
       <div class='mt-6'>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -47,7 +51,7 @@
           <%= f.password_field :password, autocomplete: "current-password", class: "border border-shade-3 rounded-sm h-12 mt-1 text-primary-2 focus:border-primary-1 p-4 w-full" %>
 
           <div class='flex justify-center'>
-            <%= f.submit "Log me in", class: "rounded bg-primary-1 p-3 text-white hover:btn-primary-hover transition leading-normal w-3/5 mt-8 z-10" %>
+            <%= f.submit "Log me in", class: "rounded btn-primary p-3 text-white hover:btn-primary-hover transition leading-normal w-3/5 mt-8 z-10" %>
           </div>
 
           <div class='flex justify-center'>

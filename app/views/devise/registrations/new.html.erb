@@ -12,7 +12,7 @@
   </div>
 </div>
 
-<div class='flex items-center relative justify-center bg-red mt-4' style='height: calc(100vh - 64px)'>
+<div class='flex items-center relative min-h-screen justify-center bg-red mt-4' style='height: calc(100vh - 64px)'>
   <div style='width: 578px' class='relative'>
     <div id='login_form' style="width: 464px; max-width: 100%" class='bg-white px-8 pt-8 pb-4 mt-8 rounded-sm mx-auto sm:w-full'>
 
@@ -40,14 +40,27 @@
               <label class="text-sm block text-primary-2 mt-4">
                 First name
               </label>
-              <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "border border-shade-3 rounded-sm h-12 mt-1 text-primary-2 focus:border-primary-1 p-4 w-full" %>
+              <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "border border-shade-3 rounded-sm h-12 mt-1 text-primary-2 focus:border-primary-1 p-4 w-full" do %>
+                <img src="icons/ic-error.png">
+              <% end %>
+              <% if resource.errors[:first_name].present? %>
+                <div class="error mt-1">
+                  <%= resource.errors[:first_name].first %>
+                </div>
+              <% end %>
             </div>
+
             
             <div class="flex-col ml-4">
               <label class="text-sm block text-primary-2 mt-4">
                 Last name
               </label>
               <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "border border-shade-3 rounded-sm h-12 mt-1 text-primary-2 focus:border-primary-1 p-4 w-full" %>
+              <% if resource.errors[:last_name].present? %>
+                <div class="error mt-1">
+                  <%= resource.errors[:last_name].first %>
+                </div>
+              <% end %>
             </div>
           </div>
 
@@ -55,11 +68,21 @@
             Email address
           <% end %>
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "border border-shade-3 rounded-sm h-12 mt-1 text-primary-2 focus:border-primary-1 p-4 w-full" %>
+          <% if resource.errors[:email].present? %>
+            <div class="error mt-1">
+              <%= resource.errors[:email].first %>
+            </div>
+          <% end %>
           
           <%= f.label :password, class: "text-sm block text-primary-2 mt-4" do %>
             Create a password
           <% end %>
           <%= f.password_field :password, autocomplete: "new-password", class: "border border-shade-3 rounded-sm h-12 mt-1 text-primary-2 focus:border-primary-1 p-4 w-full" %>
+          <% if resource.errors[:password].present? %>
+            <div class="error mt-1">
+              <%= resource.errors[:password].first %>
+            </div>
+          <% end %>
 
           <div class='flex justify-center'>
             <%= f.submit "Sign up", class: "rounded bg-primary-1 p-3 text-white hover:btn-primary-hover transition leading-normal w-3/5 mt-8 z-10" %>
