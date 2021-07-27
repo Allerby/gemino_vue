@@ -13,3 +13,13 @@ import "stylesheets/custom.scss"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import '../images/index.js.erb';
+import '../stylesheets/index.js.erb';
+import '../javascripts/index.js.erb';
+import anime from 'animejs/lib/anime.es.js';  
+
+document.addEventListener('turbolinks:load', () => {
+  window.anime = anime
+});
+

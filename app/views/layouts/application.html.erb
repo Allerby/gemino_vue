@@ -12,6 +12,8 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag asset_path('favicon.ico') %>
+    <%= javascript_pack_tag 'vue_pack', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'erb_pack', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <% if notice.present? %>
@@ -19,6 +21,8 @@
   <%end %>
 
   <body class="bg-shade-1 antialiased">
-    <%= yield %>
+    <div id="app">
+      <%= yield %>
+    </div>
   </body>
 </html>
