@@ -2,17 +2,15 @@ import Vue from 'vue/dist/vue.esm';
 import TurbolinksAdapter from 'vue-turbolinks';
 import Axios from 'axios';
 import VueAxios from 'vue-axios';
-import anime from 'animejs/lib/anime.es.js';
  
 Vue.use(VueAxios, Axios);
 Vue.use(TurbolinksAdapter);
-import '../filters/index.js.erb';
-import '../components/index.js.erb';
+
+import SelectBudgetWorkflow from '../components/select-budget-workflow.vue'
+Vue.component('select-budget-workflow', SelectBudgetWorkflow)
 
 document.addEventListener('turbolinks:load', () => {
-  const element = document.getElementById('app');
-  if (element != null) {
-    const app = new Vue({}).$mount(element);
-    console.log("Loaded Vue", app);
-  }
+  const app = new Vue({
+    el: '[data-behavior="vue"]',
+  })
 });
