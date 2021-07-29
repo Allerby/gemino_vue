@@ -1,2 +1,4 @@
-<select-budget-workflow token=<%= form_authenticity_token %>>
+<select-budget-workflow 
+  selected=<%= current_user.selected_budget_workflow.to_s %>
+  token=<%= form_authenticity_token %>>
 </select-budget-workflow>

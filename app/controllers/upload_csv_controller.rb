@@ -4,4 +4,13 @@ class UploadCsvController < ApplicationController
   def index
   end
 
+  def upload
+    
+  end
+
+  private
+
+    def upload_params
+      params.permit(:bank, :file)
+    end
 end

@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   put 'user/choose_tool/:tool', to: 'home#choose_tool'
 
+  post 'transactions/upload', to: 'upload_csv#upload'
+
   resources :upload_csv
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

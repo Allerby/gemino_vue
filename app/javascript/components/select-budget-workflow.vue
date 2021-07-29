@@ -77,8 +77,7 @@
 
 <script>
 export default {
-  props: ["token"],
-  selected: '',
+  props: ["token", "selected"],
 
   data: function() {
     return {

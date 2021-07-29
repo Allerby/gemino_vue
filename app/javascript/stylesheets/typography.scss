@@ -7,6 +7,10 @@ h1, h2, h3, h4, .body {
   @apply text-primary-2;
 }
 
+* {
+  font-family: Overpass;
+}
+
 h1 { 
   font-size: 26px;
   line-height: 33px;
