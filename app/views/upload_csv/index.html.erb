@@ -1,6 +1,7 @@
 <left-navigation>
   <upload-csv
     token=<%= form_authenticity_token %>
+    uploads="<%= @uploads.to_json %>"
   >
   </upload-csv>
 </left-navigation>

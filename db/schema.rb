@@ -10,7 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_11_103025) do
+ActiveRecord::Schema.define(version: 2021_07_29_054929) do
+
+  create_table "csv_uploads", force: :cascade do |t|
+    t.string "bank"
+    t.string "filename"
+    t.integer "transactions_id"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["transactions_id"], name: "index_csv_uploads_on_transactions_id"
+    t.index ["user_id"], name: "index_csv_uploads_on_user_id"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.decimal "amount"
+    t.string "particulars"
+    t.string "reference"
+    t.string "details"
+    t.string "code"
+    t.date "date"
+    t.string "transaction_type"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "csv_upload_id"
+    t.index ["csv_upload_id"], name: "index_transactions_on_csv_upload_id"
+    t.index ["user_id"], name: "index_transactions_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -43,4 +70,7 @@ ActiveRecord::Schema.define(version: 2021_07_11_103025) do
     t.index ["reset_password_token"], name: "index_views_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "csv_uploads", "users"
+  add_foreign_key "transactions", "csv_uploads"
+  add_foreign_key "transactions", "users"
 end

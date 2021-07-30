@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   post 'transactions/upload', to: 'upload_csv#upload'
 
+  delete 'transactions/upload/:csv_id', to: 'upload_csv#destroy'
+
   resources :upload_csv
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
