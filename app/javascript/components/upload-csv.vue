@@ -44,7 +44,12 @@
       <div class='flex flex-col-reverse'>
         <div class='mx-auto'>
           <a href="/" class='btn-secondary hover:btn-secondary-hover inline-block text-center w-56'>Previous</a>
-          <button class='btn-primary hover:btn-primary-hover ml-2 w-56' v-bind:disabled="nextIsDisabled">Next</button>
+          <button 
+            @click="goToCategorise"
+            class='btn-primary text-center inline-block hover:btn-primary-hover ml-2 w-56' 
+            :disabled="nextIsDisabled">
+            Next
+          </button>
         </div>
       </div>
     </div>
@@ -102,6 +107,9 @@ export default {
       this.axios.delete(`/transactions/upload/${uploadId}`).then((response) => {
         this.csvUploads = this.csvUploads.filter(csv => csv.id !== response.data.id)
       })
+    },
+    goToCategorise() {
+      window.location = '/categorise'
     },
   }
 }

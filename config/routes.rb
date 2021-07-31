@@ -14,11 +14,10 @@ Rails.application.routes.draw do
   resources :register
 
   put 'user/choose_tool/:tool', to: 'home#choose_tool'
-
   post 'transactions/upload', to: 'upload_csv#upload'
-
   delete 'transactions/upload/:csv_id', to: 'upload_csv#destroy'
 
   resources :upload_csv
+  resources :categorise
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
