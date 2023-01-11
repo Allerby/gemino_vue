@@ -1,3 +1,4 @@
+<% categories = json_escape(@categories_with_spending.to_json) %>
 <left-navigation>
-  <category-picker></category-picker>
+  <category-breakdown categories=<%= categories %>></category-breakdown>
 </left-navigation>

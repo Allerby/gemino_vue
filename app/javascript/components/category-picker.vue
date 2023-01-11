@@ -42,8 +42,7 @@
             class="btn-secondary hover:btn-secondary-hover w-56"
             @click="skipTransaction"
           >
-            Skip
-            transaction
+            Skip transaction
           </button>
         </div>
       </div>

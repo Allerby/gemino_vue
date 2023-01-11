@@ -8,6 +8,7 @@ import UploadCsv from '../components/upload-csv.vue';
 import LeftNavigation from '../components/left-navigation.vue';
 import OpenIndicator from '../components/select-chevron';
 import CategoryPicker from '../components/category-picker';
+import CategoryBreakdown from '../components/category-breakdown';
 import 'vue-select/dist/vue-select.css';
 
 vSelect.props.components.default = () => ({ OpenIndicator });
@@ -20,6 +21,7 @@ Vue.component('select-budget-workflow', SelectBudgetWorkflow);
 Vue.component('upload-csv', UploadCsv);
 Vue.component('left-navigation', LeftNavigation);
 Vue.component('category-picker', CategoryPicker);
+Vue.component('category-breakdown', CategoryBreakdown);
 
 document.addEventListener('turbolinks:load', () => {
   new Vue({
